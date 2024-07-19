@@ -1,0 +1,634 @@
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+html{
+    font-size: 62.5%;
+}
+
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ############### ulitiry class ########################### */
+.div1{
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+}
+
+
+.btn{
+    display: inline-block;
+    border-radius: 50px;
+    font-size: 1em;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 0 auto;
+    padding: 0.3em 1em;
+    cursor: pointer;
+    outline: none;
+    font-weight: 700;
+}
+
+
+/* ######################## style html ############################ */
+
+.nav-bar input[type="checkbox"]{
+    display: none;
+}
+
+
+.nav-bar{
+    box-shadow: 03px 5px 5px 0px #aaa;
+    position: fixed;
+    width: 100%;
+    opacity: 0.90;
+    z-index: 999;
+    background-color: #fff;
+    color: #000;
+}
+
+
+.div2{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2em;
+}
+
+
+.h1{
+    font-size: 3em;
+    font-weight: 700;
+    
+}
+
+
+.nav-bar .div2 .links{
+    display: flex;
+}
+
+
+.nav-bar .div2 .links li{
+    padding-right: 1.5em;
+    list-style: none;
+}
+
+
+.nav-bar .div2 .links li a{
+    list-style: none;
+    color: grey;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+
+.nav-bar .div2 .links li a:hover{
+    color: rgba(0, 128, 0, 0.884);
+}
+
+
+
+.section1{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../image/chine\ food.jpg);
+    height: 70vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: rgba(255, 255, 0, 0.849);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    line-height: 3em;
+    font-weight: 700;
+}
+
+
+.btn-primary{
+    color: white;
+    background-color: rgb(0, 128, 0);
+    font-size: 2em;
+  
+}
+
+
+.p2{
+    font-size: 1.4em;
+}
+
+
+/* ############################# about style ############################## */
+#about{
+    background-color: aliceblue;
+    padding: 60px 0;
+}
+
+
+
+#about .about{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+
+
+.about-text .h2{
+    font-size: 2.6em;
+    color: gray;
+    font-weight: 800;
+    padding-bottom: 1em;
+}
+
+
+
+.about-text .about-h1{
+    font-size: 3em;
+    padding-bottom: 0.6em;
+}
+
+.about-text .p1{
+    font-size: 2em;
+    font-weight: 700;
+    padding-bottom: 2em;
+}
+
+
+
+.about .about-text{
+    flex: 1 1 350px;
+    padding: 10px;
+    padding-left: 0;
+    margin: auto;
+    transform: translateX(-150%);
+    animation: about-text-animation 2s ease-in-out forwards;
+}
+
+
+@keyframes about-text-animation{
+    100%{
+        transform: translate(0);
+    }
+}
+
+
+
+.about .about-image{
+    flex: 1 1 400px;
+    transform: translateX(150%);
+    animation: about-image-animation 2s ease-in-out forwards;
+}
+
+
+@keyframes about-image-animation{
+    100%{
+        transform: translate(0);
+    }
+}
+
+
+
+.about .about-image img{
+    display: block;
+    height: 400px;
+    margin: auto;
+    object-fit: cover;
+    object-position: center;
+    max-width: 100%;
+}
+
+
+
+/* ########################### type food ######################## */
+
+
+
+.food-h1{
+    font-size: 4em;
+    font-weight: 900;
+    text-align: center;
+    color: gray;
+    padding-bottom: 1em;
+}
+
+
+.food{
+    /* border: 4px solid red; */
+    background-color: #aaaaaa31;
+    padding: 50px 0px;
+}
+
+
+
+.all-type{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.food-type{
+    /* border: 4px solid forestgreen; */
+    max-width: 350px;
+    position: relative;
+}
+
+
+
+.food-type img{
+    display: block;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.h4{
+    font-size: 2.5em;
+    font-weight: 800;
+}
+
+
+.div-food{
+    text-align: center;
+    color: white;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    z-index: 10;
+    opacity: 0;
+    transform: translate(-50% ,-50%);
+    transition: all 1s ease-in-out;
+}
+
+
+
+
+.food-type:hover .div-food{
+    top: 50%;
+    opacity: 1;
+}
+
+
+
+
+.food-type::after{
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.685);
+    transform: scaleY(0);
+    transform-origin: 100% 100%;
+    transition: all 1s ease-in-out;
+    opacity: 0;
+    z-index: 5;
+}
+
+
+
+
+.food-type:hover::after{
+    transform: scaleY(1);
+    opacity: 1;
+}
+
+
+
+/* ####################### menuitem style ##################### */
+.menu-type{
+    /* background-color: rgba(224, 255, 255, 0.363); */
+    padding: 60px 0;
+}
+
+
+
+.food-items{
+    /* border: 4px solid black; */
+    display: flex;
+    /* flex-direction: column; */
+    /* height: 500px; */
+    flex: 1 1 500px;
+    flex-wrap: wrap;
+}
+
+
+.items{
+    /* border: 4px solid green; */
+    flex: 1 1 500px;
+    display: flex;
+    margin: auto;
+}
+
+.items img{
+    display: block;
+    height: 200px;
+    width: 200px;
+    justify-content: space-between;
+    border-radius: 50%;
+    padding-bottom: 8px;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+
+
+
+.vagetable3{
+    /* text-align: center; */
+    margin: auto;
+    padding-left: 8px;
+}
+
+
+.p-item{
+    font-size: 1.5em;
+    color: rgba(128, 128, 128, 0.856);
+}
+
+.prize{
+    font-size: 2em;
+    color: rgba(0, 128, 0, 0.801);
+    font-weight: 700;
+}
+
+
+
+.h5{
+    font-weight: 100;
+    color: rgb(128, 128, 128);
+}
+
+
+
+
+
+
+
+
+
+/* ########################### style team page ######################## */
+
+
+.team{
+    background-color: rgba(129, 129, 129, 0.247);
+    padding: 50px 0;
+}
+
+
+.team-h{
+    font-size: 3em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(107, 105, 105);
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+
+
+.team-information{
+    /* border: 4px solid green; */
+    display: flex;
+    margin: auto;
+    /* width: 1000px; */
+
+}
+
+
+.team-photo{
+    /* height: 200px; */
+    /* border: 4px solid red; */
+}
+
+
+.team-photo img{
+    display: block;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    margin: auto;
+
+}
+
+
+
+.name{
+    font-size: 2em;
+    color: rgb(87, 86, 86);
+    text-align: center;
+    font-weight: 300;
+}
+
+
+
+.span-p{
+    font-size: 1.3em;
+    text-align: center;
+    padding: 0.8em;
+}
+
+
+.span{
+    color: goldenrod;
+    text-align: center;
+}
+
+
+
+
+
+
+/* ######################### contect style ######################## */
+
+
+#contect{
+    background-color: rgba(168, 168, 168, 0.247);
+    /* border: 5px solid red; */
+    padding: 60px 0;
+}
+
+
+.contect-h{
+    font-size: 5em;
+    font-family: cursive;
+    font-weight: 900;
+    color: rgb(75, 74, 74);
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+
+
+.contect{
+    display: flex;
+    /* flex-wrap: wrap; */
+}
+
+
+
+.image-box{
+    width: 50%;
+}
+
+
+.image-box img{
+    display: block;
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    object-position: center;
+    /* border: 4px solid green; */
+}
+
+
+.contect-box{
+    font-size: 1.6em;
+    color: grey;
+    width: 50%;
+    margin: auto;
+}
+
+
+
+
+.contect-box input{
+    border: none;
+    border-bottom: 3px solid gray;
+    display: block;
+    outline: none;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 1em;
+    padding: 1em;
+    color: rgb(65, 65, 65);
+}
+
+
+
+.contect-box textarea{
+    border: none;
+    /* border-bottom: 3px solid gray; */
+    display: block;
+    outline: none;
+    width: 100%;
+    margin-bottom: 1em;
+    padding: 1em;
+    color: rgba(77, 75, 75, 0.781);
+}
+
+
+
+.contect-box input[type="submit"]{
+    background-color: rgba(2, 153, 2, 0.801);
+    text-transform: uppercase;
+    color: white;
+    padding: 1em 2em;
+    display: block;
+    width: 60%;
+    border-radius: 10em;
+    font-size: 1.5em;
+    text-align: center;
+    box-shadow: none;
+}
+
+
+
+#footer{
+    background-color: rgba(0, 0, 0, 0.568);
+    padding: 2em 0;
+}
+
+
+.footer-p{
+    font-size: 2em;
+    color: white;
+    text-align: center;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+@media (max-width: 770px){
+    
+    .nav-bar input[type="checkbox"]{
+        display: block;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        z-index: 5;
+        opacity: 0.5;
+    }
+
+
+    .div2{
+        display: block;
+    }
+
+    .nav-bar{
+        display: block;
+        position: relative;
+        opacity: 1;
+        max-width: 300px;
+    }
+
+
+    .span-item{
+        display: block;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        z-index: 5;
+        opacity: 1;
+        top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        z-index: 3;
+    }
+
+
+    .list{
+        display: block;
+        background-color: #000;
+        border-radius: 10px;
+        height: 6px;
+        width: 100%;
+        z-index: 3;
+
+    }
+
+
+    .links{
+        display: flex;
+        flex-direction: column;
+        transform: translateX(-50%);
+        transition: transform 0.5s ease-in-out;
+    }
+
+
+    .nav-bar input[type="checkbox"]:checked ~ .links{
+        transform: translate(0);
+    }
+    
+ 
+}
